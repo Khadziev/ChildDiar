@@ -4,15 +4,22 @@ const User = require("../models/User.model");
 module.exports.childController = {
   getAll: async (req, res) => {
     try {
-      const child = await Child.find({
-        user: req.user.id
-      }).populate("user")
-
+      const child = await Child.find().populate("user")
       return res.json(child);
     } catch (e) {
       return res.status(400).json({
         error: e.toString(),
       });
+    }
+  },
+  getUserChild: async (req, res) => {
+    const { id } = req.user;
+    try {
+      const child = await Child.find({ user: id });
+      res.json(child);
+    }
+    catch (e) {
+      res.json(e);
     }
   },
   getChildById: async (req, res) => {
@@ -25,6 +32,8 @@ module.exports.childController = {
       });
     }
   },
+
+
   createChild: async (req, res) => {
     try {
       const childPost = await Child.create({
@@ -32,8 +41,7 @@ module.exports.childController = {
         name: req.body.name,
         age: req.body.age,
         gender: req.body.gender,
-        //user: req.user
-
+        user: req.user.id
       });
       res.json(childPost);
     } catch (e) {

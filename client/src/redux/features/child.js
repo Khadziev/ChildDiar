@@ -82,10 +82,8 @@ export const loadChild = () => {
       `http://localhost:4000/child`, {
         headers: {
           Authorization: `Bearer ${state.application.token}`,
-          "Content-type": "application/json",
         }
-      }
-    );
+      });
     const json = await response.json();
     dispatch({
       type:"child/load/fulfilled",
@@ -94,7 +92,24 @@ export const loadChild = () => {
   }
 };
 
+export const loadUserChild = () => {
+  return async (dispatch, getState) => {
+    const state = getState();
+    dispatch({type:"child/load/pending"})
 
+    const response = await fetch(
+      `http://localhost:4000/admin`, {
+        headers: {
+          Authorization: `Bearer ${state.application.token}`,
+        }
+      });
+    const json = await response.json();
+    dispatch({
+      type:"child/load/fulfilled",
+      payload: json,
+    });
+  }
+};
 
 export const postChild = (data) => {
   return async (dispatch, getState) => {
