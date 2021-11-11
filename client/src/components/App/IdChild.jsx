@@ -15,6 +15,7 @@ import eventReducer, {
 const useStyles = makeStyles({
   container: {
     width: "100%",
+
   },
 });
 
@@ -54,8 +55,12 @@ function IdChild() {
   return (
     <div className={classes.container}>
       {" "}
-      <Button onClick={handleClickOpen}>добавить события</Button>
-      <img style={{ marginTop: 30, marginLeft: 50 }} src={child?.imageURL} />
+      <Typography align="center">
+      <Button onClick={handleClickOpen}><h6>добавить события ребенка</h6></Button>
+      </Typography>
+      <Typography align="center">
+      <img style={{minHeight: '50vh'}} src={child?.imageURL} />
+        </Typography>
       <Typography align="center" variant="h3">
         {" "}
         Имя:{child?.name}
@@ -65,7 +70,7 @@ function IdChild() {
       {event.map((item) => {
         return (
           <>
-            <Typography align="center" variant="h3">
+            <Typography align="center" variant="h6">
               {" "}
               событие:{item.text}
             </Typography>
