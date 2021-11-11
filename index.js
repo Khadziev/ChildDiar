@@ -9,11 +9,6 @@ const path = require('path')
 
 const app = express()
 
-app.use(express.static(path.resolve(__dirname,"client","build")))
-app.get("*",(req,res) => {
-  res.sendFile(path.resolve(__dirname,"client","build","index.html"))
-})
-
 
 app.use(cors());
 app.use(express.json());
@@ -29,6 +24,11 @@ mongoose.connect(process.env.MONGO,{
 }).then(()=>{
   console.log('Сервер монго...')
 });
+
+app.use(express.static(path.resolve(__dirname,"client","build")))
+app.get("*",(req,res) => {
+  res.sendFile(path.resolve(__dirname,"client","build","index.html"))
+})
 
 app.listen(process.env.PORT, ()=>{
   console.log("Сервер запушен")

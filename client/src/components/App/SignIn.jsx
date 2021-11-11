@@ -15,8 +15,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../redux/features/application";
 import { useHistory } from "react-router-dom";
-//import video from "../../../src/signIn.mp4"
-import img from "../../../src/components/as.jpg"
+import video from "../../../src/signIn.mp4"
+//import img from "../../../src/components/as.jpg"
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -77,85 +77,85 @@ export default function SignIn() {
   });
 
   return (
-    <>
-      <Container className={classes.container} component="main" maxWidth="1440px">
-        {error}
-        <CssBaseline />
-        <div>
-          <video
-            //src={video}
-            autoPlay={true}
-            className={classes.slideImg}
-            loop={true}
-            playsInline={true}
-            muted={true}
-            poster={img}
-          />
-        </div>
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Войти
-          </Typography>
-          <form className={classes.form} noValidate>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              value={login}
-              onChange={handleChangeLogin}
-              required
-              fullWidth
-              id="login"
-              label="Логин"
-              name="login"
-              autoComplete="login"
-              autoFocus
+      <>
+        <Container className={classes.container} component="main" maxWidth="1440px">
+          {error}
+          <CssBaseline />
+          <div>
+            <video
+                src={video}
+                autoPlay={true}
+                className={classes.slideImg}
+                loop={true}
+                playsInline={true}
+                muted={true}
+                /*poster={img}*/
             />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              value={password}
-              onChange={handleChangePassword}
-              required
-              fullWidth
-              name="password"
-              label="Пароль"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Запомнить меня"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-              onClick={handleSubmit}
-              disabled={signIn}
-            >
+          </div>
+          <div className={classes.paper}>
+            <Avatar className={classes.avatar}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
               Войти
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Забыли пароль?
-                </Link>
+            </Typography>
+            <form className={classes.form} noValidate>
+              <TextField
+                  variant="outlined"
+                  margin="normal"
+                  value={login}
+                  onChange={handleChangeLogin}
+                  required
+                  fullWidth
+                  id="login"
+                  label="Логин"
+                  name="login"
+                  autoComplete="login"
+                  autoFocus
+              />
+              <TextField
+                  variant="outlined"
+                  margin="normal"
+                  value={password}
+                  onChange={handleChangePassword}
+                  required
+                  fullWidth
+                  name="password"
+                  label="Пароль"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+              />
+              <FormControlLabel
+                  control={<Checkbox value="remember" color="primary" />}
+                  label="Запомнить меня"
+              />
+              <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  className={classes.submit}
+                  onClick={handleSubmit}
+                  disabled={signIn}
+              >
+                Войти
+              </Button>
+              <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2">
+                    Забыли пароль?
+                  </Link>
+                </Grid>
+                <Grid item>
+                  <Link href="/registration" variant="body2">
+                    {"Зарегистрироваться"}
+                  </Link>
+                </Grid>
               </Grid>
-              <Grid item>
-                <Link href="/registration" variant="body2">
-                  {"Зарегистрироваться"}
-                </Link>
-              </Grid>
-            </Grid>
-          </form>
-        </div>
-      </Container>
-    </>
+            </form>
+          </div>
+        </Container>
+      </>
   );
 }

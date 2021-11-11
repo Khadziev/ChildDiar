@@ -37,72 +37,72 @@ function Home(props) {
   };
 
 
-  if (!token) {
-    return (
-      <img
-        style={{width:'100%', height: '100%'}}
-        src={logo}
-        alt='logo'
-      />
-    )
-  }
+  // if (!token) {
+  //   return (
+  //     <img
+  //       style={{width:'100%', height: '100%'}}
+  //       src={logo}
+  //       alt='logo'
+  //     />
+  //   )
+  // }
   {
     return(
-      <div style={{width: 800,margin:'auto',marginTop: 50}}>
+        <div style={{width: 800,margin:'auto',marginTop: 50}}>
 
-        <Carousel className="carousel">
-          <Carousel.Item className="parentImg">
-            <img
-              style={{width:'100%', height: '100%'}}
-              // className="d-block w-25"
-              src={d}
-              alt='Forest'
-            />
-            <Carousel.Caption>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              style={{width:'100%', height: '100%'}}
-              // className="d-block w-100"
-              src={a}
-              alt='Forest'
-            />
-            <Carousel.Caption>
-              <h3>Дети это святое</h3>
-              <p> самое главное в жизни, это здоровье детям</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              style={{width:'100%',
-                height: '100%'}}
-              // className="d-block w-25"
-              src={b}
-              alt='Forest'
-            />
-            <Carousel.Caption>
-              {/*<h3>Forest image</h3>*/}
-              {/*<p>Lorem ipsum dolor sit.</p>*/}
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              style={{width:'100%',
-                height: '100%'}}
-              // className="d-block w-25"
-              src={c}
-              alt='Forest'
-            />
-            <Carousel.Caption>
-              {/*<h3>Forest image</h3>*/}
-              {/*<p>Lorem ipsum dolor sit.</p>*/}
-            </Carousel.Caption>
-          </Carousel.Item>
+          <Carousel className="carousel">
+            <Carousel.Item className="parentImg">
+              <img
+                  style={{width:'100%', height: '100%'}}
+                  // className="d-block w-25"
+                  src={d}
+                  alt='Forest'
+              />
+              <Carousel.Caption>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                  style={{width:'100%', height: '100%'}}
+                  // className="d-block w-100"
+                  src={a}
+                  alt='Forest'
+              />
+              <Carousel.Caption>
+                <h3>Дети это святое</h3>
+                <p> самое главное в жизни, это здоровье детям</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                  style={{width:'100%',
+                    height: '100%'}}
+                  // className="d-block w-25"
+                  src={b}
+                  alt='Forest'
+              />
+              <Carousel.Caption>
+                {/*<h3>Forest image</h3>*/}
+                {/*<p>Lorem ipsum dolor sit.</p>*/}
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                  style={{width:'100%',
+                    height: '100%'}}
+                  // className="d-block w-25"
+                  src={c}
+                  alt='Forest'
+              />
+              <Carousel.Caption>
+                {/*<h3>Forest image</h3>*/}
+                {/*<p>Lorem ipsum dolor sit.</p>*/}
+              </Carousel.Caption>
+            </Carousel.Item>
 
-        </Carousel>
+          </Carousel>
 
-      </div>
+        </div>
     )
   }
 }

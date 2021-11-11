@@ -102,49 +102,49 @@ function Bottom(props) {
     dispatch(logout());
   };
 
-  if (!token) {
-    return (
-      <div>a</div>
-    )
-  }
+  // if (!token) {
+  //   return (
+  //     <div>a</div>
+  //   )
+  // }
   return (
-    <Box className={classes.bottom} style={{ marginTop: "200px" }}>
-      <BottomNavigation
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-        showLabels
-        className={classes.root}
-      >
-        <BottomNavigationAction
-          className={classes.bottom}
-          href="https://www.instagram.com/intocode/?hl=ru"
-          label="Instagram"
-          icon={<InstagramIcon />}
-          //style={{ color: "white" }}
-        />
-        <BottomNavigationAction
-          className={classes.bottom}
-          href="https://www.facebook.com/childdiarynet/"
-          label="Facebook"
-          icon={<FacebookIcon />}
-        />
-        <BottomNavigationAction
-          className={classes.bottom}
-          href="https://t.me/joinchat/CZlygSZWMCY4OTAy"
-          label="Связь с нами"
-          icon={<CallIcon />}
-        />
-        <BottomNavigationAction
-          className={classes.bottom}
-          href="https://goo.gl/maps/JRhVQuuiY1ybiShZ6"
-          label="Адрес"
-          icon={<LocationOnIcon />}
-          //style={{ color: "white" }}
-        />
-      </BottomNavigation>
-    </Box>
+      <Box className={classes.bottom} style={{ marginTop: "200px" }}>
+        <BottomNavigation
+            value={value}
+            onChange={(event, newValue) => {
+              setValue(newValue);
+            }}
+            showLabels
+            className={classes.root}
+        >
+          <BottomNavigationAction
+              className={classes.bottom}
+              href="https://www.instagram.com/intocode/?hl=ru"
+              label="Instagram"
+              icon={<InstagramIcon />}
+              //style={{ color: "white" }}
+          />
+          <BottomNavigationAction
+              className={classes.bottom}
+              href="https://www.facebook.com/childdiarynet/"
+              label="Facebook"
+              icon={<FacebookIcon />}
+          />
+          <BottomNavigationAction
+              className={classes.bottom}
+              href="https://t.me/joinchat/CZlygSZWMCY4OTAy"
+              label="Связь с нами"
+              icon={<CallIcon />}
+          />
+          <BottomNavigationAction
+              className={classes.bottom}
+              href="https://goo.gl/maps/JRhVQuuiY1ybiShZ6"
+              label="Адрес"
+              icon={<LocationOnIcon />}
+              //style={{ color: "white" }}
+          />
+        </BottomNavigation>
+      </Box>
   );
 
 }
